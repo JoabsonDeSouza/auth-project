@@ -41,6 +41,12 @@ export const RegisterForm = () => {
         setError(data?.error);
         setSuccess(data?.success)
       })
+      .finally(() => {
+        form.reset();
+        setTimeout(() => {
+          setSuccess('')
+        }, 2000)
+      })
     })
   }
 
